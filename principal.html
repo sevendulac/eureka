@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Eureka!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Transparência e Justiça" name="description" />
+        <meta content="Coderthemes" name="author" />
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+
+        <!-- third party css -->
+        <link href="css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+        <link href="css/vendor/fullcalendar.min.css" rel="stylesheet" type="text/css" />
+        <!-- third party css end -->
+
+        <!-- App css -->
+        <link href="css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
+        <link href="css/app.min.css" rel="stylesheet" type="text/css" id="light-style" />
+
+    </head>
+
+
+    <body class="loading">
+        <!-- Begin page -->
+    <div class="wrapper">
+        <div class="accordion" id="accordionExample">
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="left-side-menu">
+
+                <div class="h-100" id="left-side-menu-container" data-simplebar>
+
+                    <!-- LOGO -->
+                    <a href="principal.html" class="logo text-center">
+                        <span class="logo-lg">
+                            <img src="images/logo.png" alt="" height="35" id="side-main-logo">
+                        </span>
+                        <span class="logo-sm">
+                            <img src="images/logo_sm.png" alt="" height="35" id="side-sm-main-logo">
+                        </span>
+                    </a>
+
+<!-- ============================================================== -->
+<!-- Começa Menu Principal Esquerdo -->
+<!-- ============================================================== -->
+                    <ul class="metismenu side-nav">
+
+                        <li class="side-nav-title side-nav-item"></li>
+
+                            <li class="side-nav-item" id="headingOne">
+                                <a href="#partes_netvis" class="side-nav-link" data-toggle="collapse" data-target="#partes_netvis" aria-expanded="true" aria-controls="partes_netvis">
+                                    <i class="dripicons-expand"></i>
+                                    <span> Visualização Litigantes </span>
+                                </a>
+                                <ul class="side-nav-second-level" aria-expanded="false">
+                                    <li id="heading_vis_maiores_litigante">
+                                        <a href="#vis_maiores_litigante" class="side-nav-second-level collapsed" data-toggle="collapse" data-target="#vis_maiores_litigante" aria-expanded="false" aria-controls="vis_maiores_litigante">Maiores Litigantes</a>
+                                    </li>
+                                    <li id="heading_vis_tipo_partes">
+                                        <a href="#vis_tipo_partes" class="side-nav-second-level collapsed" data-toggle="collapse" data-target="#vis_tipo_partes" aria-expanded="false" aria-controls="vis_tipo_partes">Tipo de Partes</a>
+                                    </li>
+                                    <li id="heading_vis_polo_passivo">
+                                        <a href="#vis_polo_passivo" class="side-nav-second-level collapsed" data-toggle="collapse" data-target="#vis_polo_passivo" aria-expanded="false" aria-controls="vis_polo_passivo">Polo Passivo</a>
+                                    </li>
+                                    <li id="heading_vis_polo_ativo">
+                                        <a href="#vis_polo_ativo" class="side-nav-second-level collapsed" data-toggle="collapse" data-target="#vis_polo_ativo" aria-expanded="false" aria-controls="vis_polo_ativo">Polo Ativo</a>
+                                    </li>
+                                    <!-- <li id="heading_partes_netvis_ativo">
+                                        <a href="#partes_netvis_ativo" class="side-nav-second-level collapsed" data-toggle="collapse" data-target="#partes_netvis_ativo" aria-expanded="false" aria-controls="partes_netvis_ativo">Classe/Assunto</a>
+                                    </li> -->
+                                </ul>
+                            </li>
+
+                            <li class="side-nav-item" id="heading_mapa_brasil">
+                                <a href="#" class="side-nav-link" data-toggle="collapse" data-target="#" aria-expanded="false" aria-controls="#">
+                                    <i class="dripicons-graph-line"></i>
+                                    <span> Tabelas Dinâmicas </span>
+                                </a>
+                                <ul class="side-nav-second-level" aria-expanded="false">
+                                    <li id="heading_tab_maiores_litigantes">
+                                        <a href="#tab_maiores_litigantes" class="side-nav-second-level collapsed" data-toggle="collapse" data-target="#tab_maiores_litigantes" aria-expanded="false" aria-controls="tab_maiores_litigantes">Maiores Litigantes</a>
+                                    </li>
+                                    <li id="heading_tab_tipo_partes">
+                                        <a href="#tab_tipo_partes" class="side-nav-second-level collapsed" data-toggle="collapse" data-target="#tab_tipo_partes" aria-expanded="false" aria-controls="tab_tipo_partes">Por Tipo de Partes</a>
+                                    </li>
+                                    <li id="heading_tab_polo_passivo">
+                                        <a href="#tab_polo_passivo" class="side-nav-second-level collapsed" data-toggle="collapse" data-target="#tab_polo_passivo" aria-expanded="false" aria-controls="tab_polo_passivo">Polo Passivo</a>
+                                    </li>
+                                    <li id="heading_tab_polo_ativo">
+                                        <a href="#tab_polo_ativo" class="side-nav-second-level collapsed" data-toggle="collapse" data-target="#tab_polo_ativo" aria-expanded="false" aria-controls="tab_polo_ativo">Polo Ativo</a>
+                                    </li>
+                                    <li id="heading_tab_classe_assunto">
+                                        <a href="#tab_classe_assunto" class="side-nav-second-level collapsed" data-toggle="collapse" data-target="#tab_classe_assunto" aria-expanded="false" aria-controls="tab_classe_assunto">Classe/Assunto</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a href="#tabelas" class="side-nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="tabelas">
+                                <i class="dripicons-view-list"></i>
+                                <span> Produtividade/ Tempo </span>
+                            </a>
+                            <ul class="side-nav-second-level" aria-expanded="false">
+                                <li id="heading_prod_juiz">
+                                    <a href="#prod_juiz" class="side-nav-second-level collapsed" data-toggle="collapse" data-target="#prod_juiz" aria-expanded="false" aria-controls="prod_juiz">Por Juiz</a>
+                                </li>
+                                <li id="heading_prod_vara">
+                                    <a href="#prod_vara" class="side-nav-second-level collapsed" data-toggle="collapse" data-target="#prod_vara" aria-expanded="false" aria-controls="prod_vara">Por Vara</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="side-nav-item">
+                            <a href="#noticias" class="side-nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="noticias">
+                                <i class="dripicons-conversation"></i>
+                                <span> Notícias </span>
+                            </a>
+                        </li>
+                        
+                        <li class="side-nav-item">
+                            <a href="#ajuda" class="side-nav-link" data-toggle="collapse" aria-expanded="false" aria-controls="ajuda">
+                                <i class="dripicons-information"></i>
+                                <span> Ajuda </span>
+                            </a>
+                        </li>
+
+                        <li class="side-nav-item">
+                                <a class="side-nav-link right-bar-toggle" data-toggle="collapse" href="javascript: void(0);" aria-controls="configuracoes">
+                                <i class="dripicons-gear noti-icon"></i>
+                                <span> Configurações </span>
+                            </a>
+                            <!-- <ul class="side-nav-second-level" aria-expanded="false">
+                                <li>
+                                    <a href="principal.html">Opção 1</a>
+                                </li>
+                                <li>
+                                    <a href="dashboard-analytics.html">Opção 2</a>
+                                </li>
+                                <li>
+                                    <a href="dashboard-crm.html">Opção 3</a>
+                                </li>
+                                <li>
+                                    <a href="dashboard-projects.html">Opção 4</a>
+                                </li>
+                            </ul> -->
+                        </li>
+                    </ul>
+                    
+                    <!-- ============================================================== -->
+                    <!-- Termina Menu Principal Esquerdo -->
+                    <!-- ============================================================== -->
+                    
+                </div>
+
+                <!-- Sidebar -left -->
+
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+
+            <div class="content-page">
+                <div class="content">
+                    <!-- Topbar Start -->
+                    <div class="navbar-custom">
+                        <ul class="list-unstyled topbar-right-menu float-right mb-0">
+<!-- ============================================================== -->
+<!-- começa sino de notificações -->
+<!-- ============================================================== -->
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <i class="dripicons-bell noti-icon"></i>
+                                    <span class="noti-icon-badge"></span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-lg">
+
+                                    <!-- item-->
+                                    <div class="dropdown-item noti-title">
+                                        <h5 class="m-0">
+                                            <span class="float-right">
+                                                <a href="javascript: void(0);" class="text-dark">
+                                                    <small>Clear All</small>
+                                                </a>
+                                            </span>Notification
+                                        </h5>
+                                    </div>
+
+                                    <div style="max-height: 230px;" data-simplebar>
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon bg-primary">
+                                                <i class="mdi mdi-comment-account-outline"></i>
+                                            </div>
+                                            <p class="notify-details">Caleb Flakelar commented on Admin
+                                                <small class="text-muted">1 min ago</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon bg-info">
+                                                <i class="mdi mdi-account-plus"></i>
+                                            </div>
+                                            <p class="notify-details">New user registered.
+                                                <small class="text-muted">5 hours ago</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon">
+                                                <img src="images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" /> </div>
+                                            <p class="notify-details">Cristina Pride</p>
+                                            <p class="text-muted mb-0 user-msg">
+                                                <small>Hi, How are you? What Sobre our next meeting</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon bg-primary">
+                                                <i class="mdi mdi-comment-account-outline"></i>
+                                            </div>
+                                            <p class="notify-details">Caleb Flakelar commented on Admin
+                                                <small class="text-muted">4 days ago</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon">
+                                                <img src="images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" /> </div>
+                                            <p class="notify-details">Karen Robinson</p>
+                                            <p class="text-muted mb-0 user-msg">
+                                                <small>Wow ! this admin looks good and awesome design</small>
+                                            </p>
+                                        </a>
+
+                                        <!-- item-->
+                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                            <div class="notify-icon bg-info">
+                                                <i class="mdi mdi-heart"></i>
+                                            </div>
+                                            <p class="notify-details">Carlos Crouch liked
+                                                <b>Admin</b>
+                                                <small class="text-muted">13 days ago</small>
+                                            </p>
+                                        </a>
+                                    </div>
+
+                                    <!-- All-->
+                                    <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
+                                        View All
+                                    </a>
+
+                                </div>
+                            </li>
+<!-- ============================================================== -->
+<!-- Termina sino de notificações -->
+<!-- ============================================================== -->
+
+<!-- ============================================================== -->
+<!-- começa Menu Usuário superior -->
+<!-- ============================================================== -->
+                            <li class="dropdown notification-list">
+                                <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                    aria-expanded="false">
+                                    <span class="account-user-avatar"> 
+                                        <img src="images/users/ruth.jpg" alt="user-image" class="rounded-circle">
+                                    </span>
+                                    <span>
+                                        <span class="account-user-name">Ruth Ginsburg</span>
+                                        <span class="account-position">Hackathon Exponencial</span>
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                    <!-- item-->
+                                    <div class=" dropdown-header noti-title">
+                                        <h6 class="text-overflow m-0">Bem vindo!</h6>
+                                    </div>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-account-circle mr-1"></i>
+                                        <span>Conta</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-account-edit mr-1"></i>
+                                        <span>Configurações</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-lifebuoy mr-1"></i>
+                                        <span>Suporte</span>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <i class="mdi mdi-logout mr-1"></i>
+                                        <span>Sair</span>
+                                    </a>
+
+                                </div>
+                            </li>
+<!-- ============================================================== -->
+<!-- termina Menu Usuário superior -->
+<!-- ============================================================== -->
+                        </ul>
+                        <button class="button-menu-mobile open-left disable-btn">
+                            <i class="mdi mdi-menu"></i>
+                        </button>
+                        <div class="app-search">
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="digite aqui...">
+                                    <span class="mdi mdi-magnify"></span>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-dark" type="submit">Procurar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- end Topbar -->
+                    
+
+<!-- <iframe src="descricao_painel.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>-->
+
+
+                <!-- =========================================================================================================================== -->
+                <!-- Dashboard - início conteúdo interno-->
+                <!-- =========================================================================================================================== -->
+
+
+                <div id="dashboard" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                
+                    <!-- ============================================================== -->
+                    <!-- Start Page Content here -->
+                    <!-- ============================================================== -->
+                           
+                            <!-- Start Content-->
+                            <div>
+                               <iframe src="descricao_painel.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                            </div>
+                            <!-- container -->                
+                
+                        <!-- content -->
+                
+                        <!-- Footer Start -->
+                        <footer class="footer">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        2020 © Eureka!
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-md-right footer-links d-none d-md-block">
+                                            <a href="javascript: void(0);">Sobre</a>
+                                            <a href="javascript: void(0);">Suporte</a>
+                                            <a href="javascript: void(0);">Contato</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- end Footer -->
+                
+                
+                
+                    <!-- ============================================================== -->
+                    <!-- End Page content -->
+                    <!-- ============================================================== -->
+                
+                
+                </div>
+                <!-- =========================================================================================================================== -->
+                <!-- Dashboard - fim conteúdo interno-->
+                <!-- =========================================================================================================================== -->
+
+                <div id="vis_maiores_litigante" class="row mx-md-n5 collapse" aria-labelledby="vis_maiores_litigante" data-parent="#accordionExample">
+                    <iframe src="http://www.ioop.com.br/hackathon/partes-netvis.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+                <div id="vis_tipo_partes" class="collapse" aria-labelledby="heading_vis_tipo_partes" data-parent="#accordionExample">
+                    <iframe src="http://www.ioop.com.br/hackathon/Tipo%20de%20Parte-netvis.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+                <div id="vis_polo_passivo" class="collapse" aria-labelledby="heading_vis_polo_passivo" data-parent="#accordionExample">
+                    <iframe src="http://www.ioop.com.br/hackathon/PoloPassivo-netvis.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+                <div id="vis_polo_ativo" class="collapse" aria-labelledby="heading_vis_polo_ativo" data-parent="#accordionExample">
+                    <iframe src="http://www.ioop.com.br/hackathon/PoloAtivo-netvis.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+                <div id="vis_classe_assunto" class="collapse" aria-labelledby="heading_vis_classe_assunto" data-parent="#accordionExample">
+                    <iframe src="#" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+
+                
+                <div id="noticias" class="collapse" aria-labelledby="heading_noticias" data-parent="#accordionExample">
+                    <iframe src="http://www.alista.com.br/justice/" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+                
+                <!-- ============================================================== -->
+                <!-- Começo Mapas de Vetores -->
+                <!-- ============================================================== -->
+                
+                
+
+                <div id="prod_juiz" class="collapse" aria-labelledby="heading_prod_juiz" data-parent="#accordionExample">
+                    <iframe src="http://www.ioop.com.br/hackathon/juiz.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+                <div id="prod_vara" class="collapse" aria-labelledby="heading_prod_vara" data-parent="#accordionExample">
+                    <iframe src="http://www.ioop.com.br/hackathon/vara.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>                
+
+
+                <!-- <div id="varas" class="collapse" aria-labelledby="varas" data-parent="#accordionExample">
+                    <iframe src="#" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div> -->
+                <div id="tab_maiores_litigantes" class="collapse" aria-labelledby="heading_tab_maiores_litigantes" data-parent="#accordionExample">
+                    <iframe src="http://www.ioop.com.br/hackathon/partes.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+                <div id="tab_tipo_partes" class="collapse" aria-labelledby="heading_tab_tipo_partes" data-parent="#accordionExample">
+                    <iframe src="http://www.ioop.com.br/hackathon/tipodeparte.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+                <div id="tab_polo_passivo" class="collapse" aria-labelledby="heading_tab_polo_passivo" data-parent="#accordionExample">
+                    <iframe src="http://www.ioop.com.br/hackathon/partePA.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+                <div id="tab_polo_ativo" class="collapse" aria-labelledby="heading_tab_polo_ativo" data-parent="#accordionExample">
+                    <iframe src="http://www.ioop.com.br/hackathon/parteAT.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+                <div id="tab_classe_assunto" class="collapse" aria-labelledby="heading_tab_classe_assunto" data-parent="#accordionExample">
+                    <iframe src="http://www.ioop.com.br/hackathon/classeassunto.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+                <!-- ============================================================== -->
+                <!-- Fim Mapas de Vetores -->
+                <!-- ============================================================== -->
+
+
+                <div id="calendario" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <iframe src="calendario.html" width="100%" style="height:100vh;" frameborder="0" class="src"></iframe>
+                </div>
+                                
+                <!-- =========================================================================================================================== -->
+                <!-- Calendário - fim conteúdo interno-->
+                <!-- =========================================================================================================================== -->
+                
+                               
+                
+                <!-- Aqui termina a página Dashboard Principal-->
+
+
+
+
+
+
+                </div>
+                <!-- content -->
+
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                2020 © Eureka!
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-md-right footer-links d-none d-md-block">
+                                    <a href="javascript: void(0);">Sobre</a>
+                                    <a href="javascript: void(0);">Support</a>
+                                    <a href="javascript: void(0);">Contato</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+
+        </div>
+    </div>
+        <!-- END wrapper -->
+
+        <!-- bundle -->
+        <script src="js/vendor.min.js"></script>
+        <script src="js/app.min.js"></script>
+
+        <!-- third party js -->
+        <script src="js/vendor/apexcharts.min.js"></script>
+        <script src="js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="js/vendor/jquery-ui.min.js"></script>
+        <script src="js/vendor/fullcalendar.min.js"></script>
+        <!-- third party js ends -->
+
+        <!-- demo app -->
+        <script src="js/pages/demo.dashboard.js"></script>
+        <script src="js/pages/demo.calendar.js"></script>
+        <!-- end demo js-->
+    </body>
+</html>
